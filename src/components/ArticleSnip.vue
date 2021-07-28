@@ -1,19 +1,19 @@
 <template>
   <div class="snippet fullsnip">
-      <router-link class="snippet title" :to="this.article.id">{{
-        this.article.title
-      }}</router-link>
+    <router-link class="snippet title" :to="this.article.id"
+      >{{ this.article.title }}
       <div class="snippet content">
         <img class="snippet image" :src="this.article.image" />
         <div class="snippet articlecontent" style="overflow: hidden">
-          {{ article.content.split(" ").splice(0, 20).join(" ") }}...
+          {{ article.content.split(" ").splice(0, 30).join(" ") }}...
         </div>
       </div>
       <h3 class="snippet date">Posted on {{ this.article.date }}</h3>
       <p class="snippet tags">
         Tags:
         <a v-for="tag in this.article.tags" :key="tag">{{ tag }}, </a>
-      </p>
+      </p></router-link
+    >
   </div>
 </template>
 
@@ -44,30 +44,28 @@ export default {
   min-height: 100px;
   height: fit-content;
   width: calc(100%-40px);
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px 20px 20px 20px;
+  margin-top: 15px;
+  padding-bottom: 10px;
   text-align: left;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
+  border-bottom: solid #cccccc 0.5px;
 }
 
-.snippet.fullsnip:hover{
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-  margin-top: 25px;
-  margin-bottom: 35px;
+.snippet.fullsnip:hover {
+  margin-top: 10px;
+  padding-bottom: 15px;
 }
 
 .snippet.image {
-  height: 100px;
-  width: 200px;
+  height: 100%;
+  width: 100px;
   object-fit: cover;
 }
 
 .snippet.title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 20px;
   color: black;
   text-decoration: none;
 }
@@ -87,24 +85,26 @@ export default {
 }
 
 .snippet.articlecontent {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-align: left;
-  padding: 0px 10px 10px 50px;
+  padding: 0px 10px 10px 10px;
   margin: 0px;
   height: fit-content;
-  font-size: 21px;
+  font-size: calc(10px + 1vw);
   font-weight: 300;
 }
 
 .snippet.date {
-  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 10px;
   font-weight: 300;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .snippet.tags {
-  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 10px;
   font-weight: 300;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -115,5 +115,33 @@ export default {
   box-sizing: border-box; /* required */
   width: 100%; /* required */
   flex: none; /* required */
+}
+
+@media screen and (min-width: 769px) {
+  .snippet.title {
+    font-size: 28px;
+  }
+  .snippet.image {
+    height: 150px;
+    width: 100%;
+  }
+  .snippet.articlecontent {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .snippet.title {
+    font-size: 34px;
+  }
+  .snippet.image {
+    height: 200px;
+    width: 50%;
+  }
+  .snippet.articlecontent {
+    padding-left: 50px;
+    font-size: 26px;
+    width: 50%;
+  }
 }
 </style>

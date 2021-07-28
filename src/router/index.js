@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Article from "../views/Article.vue";
 import EditArticle from "../views/EditArticle.vue";
 import EditArticleNew from "../views/EditArticleNew.vue";
+import Contribute from "../views/Contribute.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     meta: {
       title: "HNLTCS",
     },
+  },
+  {
+    path: "/contribute",
+    name: "Contribute",
+    component: Contribute
   },
   {
     path: "/about",

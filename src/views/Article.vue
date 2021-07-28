@@ -1,7 +1,6 @@
 <template>
   <div class="page articlepost">
-    <div class="content articlepost" id="thisarticle"></div>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    <div class="content articlepost" id="thisarticle"></div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="@OUOccasionally " data-show-count="false">Tweet</a>
   </div>
 </template>
 
@@ -22,6 +21,12 @@ export default {
   },
   methods: {},
   mounted() {
+    let twitterScript = document.createElement("script");
+    twitterScript.setAttribute(
+      "src",
+      "https://platform.twitter.com/widgets.js"
+    );
+    document.head.appendChild(twitterScript);
 
 
     const article = document.getElementById("thisarticle");
@@ -36,7 +41,7 @@ export default {
         image.setAttribute("class", "articleImage");
         title.setAttribute("class", "articleTitleTxt");
         title.innerText = doc.title;
-        content.innerHTML = markdown.toHTML(doc.content);
+        content.innerHTML = markdown.toHTML(doc.content.replaceAll('\\n', '\n\n'));
         const date = document.createElement("div");
         date.setAttribute("class", "articleDate");
         date.innerText = doc.date;
@@ -49,7 +54,7 @@ export default {
       }
     }
 
-    db.collection("articles")
+    db.collection("article")
       .doc(this.id)
       .get()
       .then(function (doc) {
@@ -67,13 +72,6 @@ export default {
 </script>
 
 <style>
-:root {
-  --blue: #0f49b4;
-  --red: #b82929;
-  --green: #1d8f2e;
-  --StandardTextColor: rgb(0, 0, 0);
-}
-
 .articleContent {
   padding-top: 20px;
   width: 100%;
@@ -85,7 +83,6 @@ export default {
 }
 
 .content.articlepost{
-  width:80%;
   text-align: center;
   margin:auto;
 }

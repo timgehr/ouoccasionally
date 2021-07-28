@@ -2,13 +2,12 @@
   <div class="nav">
     <router-link to="/" tag="div" class="homegroup">
       <img src='../assets/logoalt.svg'
-      height="80%"
+      height="70%"
       width="auto"
       style="vertical-align: middle">
     </router-link>
     <div class="navitself">
       <router-link id="nav1" to="/">Home</router-link>
-      <router-link id="nav2" to="/articles">Articles</router-link>
       <router-link id="nav3" to="/about">About</router-link>
       <router-link id="nav4" to="/contribute">Contribute</router-link>
     </div>
@@ -27,8 +26,8 @@ export default {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   align-items: left;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   width: 100%;
   justify-content: center;
   background: #841617;
@@ -37,7 +36,7 @@ export default {
   display: flex;
   flex-direction: row;
   position: -webkit-sticky;
-  position: sticky;
+  position: relative;
   top: 0;
   transition: 0.5s;
   z-index: 100;
@@ -60,6 +59,7 @@ export default {
   max-width: 1000px;
   text-align: right;
   padding-right: 30px;
+  display: none;
 }
 
 .homegroup {

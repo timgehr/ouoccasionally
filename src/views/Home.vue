@@ -2,7 +2,6 @@
   <div class="page home">
     <articleSnipBig :article="articles[0]"></articleSnipBig>
     <div v-for="article in articles.slice(1)" v-bind:key="article">
-      <hr />
       <articleSnip
         :article="article"
         :leftColor="colors[articles.indexOf(article)]"
@@ -30,7 +29,7 @@ export default {
     };
   },
   created() {
-    db.collection("articles")
+    db.collection("article")
       .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {

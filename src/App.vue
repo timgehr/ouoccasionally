@@ -42,12 +42,12 @@ export default {
 }
 
 .page {
-  width: 80%;
+  width: 90%;
   max-width: 1100px;
   margin: 0px auto 0px auto;
   text-align: left;
   font-size: 18px;
-  padding: 30px 30px 30px 30px;
+  padding: 30px 0 30px 0px;
 }
 
 a {
