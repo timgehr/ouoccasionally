@@ -144,11 +144,17 @@ export default {
 
 .articleContent {
   font-family: Georgia, "Times New Roman", Times, serif;
-  animation: rideup 2.2s ease, noshow 1.8s ease-in;
+  animation: rideup 2.0s ease, noshow 1.6s ease-in;
 }
 
 .articleContent h1 {
   animation: underlineTransition 2s ease-in;
+}
+
+blockquote{
+  border-left: solid #841617 4px;
+  padding-left: 15px;
+  font-style: italic;
 }
 
 @keyframes underlineTransition {
@@ -165,7 +171,7 @@ export default {
 
 @keyframes rideup {
   from {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 }
 </style>
