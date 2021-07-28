@@ -1,12 +1,18 @@
 <template>
   <div class="page articlepost">
-    <div class="content articlepost" id="thisarticle"></div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="@OUOccasionally " data-show-count="false">Tweet</a>
+    <div class="content articlepost" id="thisarticle"></div>
+    <a
+      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      class="twitter-share-button"
+      data-text="@OUOccasionally "
+      data-show-count="false"
+      >Tweet</a
+    >
   </div>
 </template>
 
 <script>
 import db from "@/fb";
-import { markdown } from "markdown";
 export default {
   data() {
     return {
@@ -27,7 +33,8 @@ export default {
       "https://platform.twitter.com/widgets.js"
     );
     document.head.appendChild(twitterScript);
-
+    var showdown = require("showdown");
+    var converter = new showdown.Converter();
 
     const article = document.getElementById("thisarticle");
 
@@ -41,7 +48,9 @@ export default {
         image.setAttribute("class", "articleImage");
         title.setAttribute("class", "articleTitleTxt");
         title.innerText = doc.title;
-        content.innerHTML = markdown.toHTML(doc.content.replaceAll('\\n', '\n\n'));
+        content.innerHTML = converter.makeHtml(
+          doc.content.replaceAll("\\n", "\n\n")
+        );
         const date = document.createElement("div");
         date.setAttribute("class", "articleDate");
         date.innerText = doc.date;
@@ -78,17 +87,17 @@ export default {
   text-align: left;
 }
 
-.page.articlepost{
+.page.articlepost {
   text-align: center;
 }
 
-.content.articlepost{
+.content.articlepost {
   text-align: center;
-  margin:auto;
+  margin: auto;
 }
 
 .articleTitleTxt {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: black;
   width: calc(100% - 0px);
   text-align: left;
@@ -96,10 +105,10 @@ export default {
   z-index: 2;
 }
 
-.articleDate{
+.articleDate {
   text-align: left;
   margin: 20px 0px 20px 0px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: gray;
 }
 
@@ -129,12 +138,12 @@ export default {
 
 .articleImage {
   width: 100%;
-  max-height:300px;
+  max-height: 300px;
   object-fit: cover;
 }
 
 .articleContent {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   animation: rideup 2.2s ease, noshow 1.8s ease-in;
 }
 
