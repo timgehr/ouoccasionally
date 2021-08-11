@@ -63,7 +63,7 @@ export default {
       }
     }
 
-    db.collection("article")
+    db.collection("list")
       .doc(this.id)
       .get()
       .then(function (doc) {
@@ -80,114 +80,18 @@ export default {
 };
 </script>
 
-<style>
-.articleContent {
-  padding-top: 20px;
-  width: 100%;
-  text-align: left;
-}
-
-.page.articlepost {
-  text-align: center;
-}
-
-.content.articlepost {
-  text-align: center;
-  margin: auto;
-}
-
-.articleTitleTxt {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: black;
-  width: calc(100% - 0px);
-  text-align: left;
-  margin: 0px 0px 0px 0px;
-  z-index: 2;
-}
-
-.articleDate {
-  text-align: left;
-  margin: 20px 0px 20px 0px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: gray;
-}
-
-.articleContent h1 {
-  font-size: 24px;
-  font-weight: 700;
-  text-decoration: underline var(--green);
-  padding-top: 30px;
-}
-
-.articleContent h2 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.articleContent p {
-  font-size: 18px;
-  font-weight: 100;
-  line-height: 28px;
-}
-
-.articleContent li {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 36px;
-}
-
+<style scoped>
 .articleImage {
-  margin: none !important;
-  width: 100% !important;
-  height: 300px !important;
-  max-height: 300px !important;
-  object-fit: cover !important;
-}
-
-.articleContent {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  animation: rideup 2.0s ease, noshow 1.6s ease-in;
-}
-
-.articleContent h1 {
-  animation: underlineTransition 2s ease-in;
-}
-
-blockquote{
-  border-left: solid #841617 4px;
-  padding-left: 15px;
-  font-style: italic;
-}
-
-@keyframes underlineTransition {
-  from {
-    text-decoration: underline transparent;
-  }
-}
-
-@keyframes noshow {
-  from {
-    color: transparent;
-  }
-}
-
-@keyframes rideup {
-  from {
-    padding-top: 80px;
-  }
-}
-
-.content.articlepost img {
-  display: block;
-  width: 50%;
-  margin: auto;
-  height: 20vw;
+  width: 100%;
+  max-height: 300px;
   object-fit: cover;
+  margin: none;
 }
 
-.content.articlepost strong {
-  font-size: 30px;
-  margin-top: 100px;
-  display: block;
+img {
+  width: 60%;
+  margin: auto;
+  height: 200;
+  object-fit: cover;
 }
 </style>

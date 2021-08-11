@@ -1,10 +1,13 @@
 <template>
   <div class="nav">
     <router-link to="/" tag="div" class="homegroup">
-      <img src='../assets/logoalt.svg'
-      height="70%"
-      width="auto"
-      style="vertical-align: middle">
+      <img
+        class="LogoHomeButton"
+        src="../assets/logoalt.svg"
+        height="70%"
+        width="auto"
+        style="vertical-align: middle"
+      />
     </router-link>
     <div class="navitself">
       <router-link id="nav1" to="/">Home</router-link>
@@ -42,13 +45,13 @@ export default {
   z-index: 100;
 }
 
-.primary-home-size{
+.primary-home-size {
   font-size: 60px;
   font-weight: bolder;
   margin-right: 10px;
 }
 
-.secondary-home-size{
+.secondary-home-size {
   font-size: 20px;
   font-weight: bolder;
   line-height: 100px;
@@ -92,6 +95,11 @@ export default {
 
 .logo60 {
   margin: 10px 20px 10px 0px;
-  z-index: 100;
+}
+
+.LogoHomeButton {
+  height: 70%;
+  width: auto;
+  vertical-align: middle;
 }
 </style>
