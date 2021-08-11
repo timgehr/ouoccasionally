@@ -139,6 +139,7 @@ export default {
 .articleImage {
   margin: none !important;
   width: 100% !important;
+  max-width: 100% !important;
   height: 300px !important;
   max-height: 300px !important;
   object-fit: cover !important;
@@ -179,15 +180,16 @@ blockquote{
 
 .content.articlepost img {
   display: block;
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
   margin: auto;
-  height: 20vw;
+  margin-bottom: 100px;
+  max-height: 300px;
   object-fit: cover;
 }
 
 .content.articlepost strong {
   font-size: 30px;
-  margin-top: 100px;
   display: block;
 }
 </style>
