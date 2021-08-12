@@ -137,7 +137,7 @@ export default {
 }
 
 .articleImage {
-  margin: none !important;
+  margin: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
   height: 300px !important;
